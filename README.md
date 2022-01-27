@@ -19,6 +19,8 @@ Here is a list of packages that we added and compiled to control live yumi:
 4. abb_robot_driver
 5. industrial_core
 
+Remerber to build with catkin_make_isolated or catkin build. Also, build all others packages before yumi.
+
 As mentioned in the kth-ros-pkg/yumi/wiki, the parameters MAX_NUM_JOINTS of industrial_core/simple_message/include/simple_message/joint_data.h must have a value of 20 for RWS control.
 
 Here we applied the RWS control with:
