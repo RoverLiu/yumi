@@ -24,6 +24,9 @@ Remerber to build with catkin_make_isolated or catkin build. Also, build all oth
 As mentioned in the kth-ros-pkg/yumi/wiki, the parameters MAX_NUM_JOINTS of industrial_core/simple_message/include/simple_message/joint_data.h must have a value of 20 for RWS control.
 
 Here we applied the RWS control with:
+
 roslaunch yumi_launch yumi_traj_pos_control.launch
+roslaunch yumi_moveit_config demo_online.launch
+
 
 More details about live robot control could be found here: https://github.com/kth-ros-pkg/yumi/wiki/Live-robot
