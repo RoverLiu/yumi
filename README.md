@@ -26,6 +26,7 @@ As mentioned in the kth-ros-pkg/yumi/wiki, the parameters MAX_NUM_JOINTS of indu
 Here we applied the RWS control with:
 
 roslaunch yumi_launch yumi_traj_pos_control.launch
+
 roslaunch yumi_moveit_config demo_online.launch
 
 
