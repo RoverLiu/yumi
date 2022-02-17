@@ -42,7 +42,7 @@
     <node name="yumi_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
     <!-- Show robot in Rviz   -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/>
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/> -->
 
 </launch>
 
