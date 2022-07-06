@@ -6,10 +6,21 @@
 	<arg name="ip" default="192.168.125.1"/>
 	<rosparam file="$(find yumi_control)/config/gripper_controllers.yaml" command="load" ns="/yumi"/>
 	<rosparam file="$(find yumi_control)/config/traj_controllers.yaml" command="load" ns="/yumi"/>
-    <arg name="arm_controllers" default="joint_state_controller
+
+    <group ns="/yumi">
+        <arg name="arm_controllers" default="joint_state_controller
                                      joint_traj_pos_controller_l
                                      joint_traj_pos_controller_r"/>
-    <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="$(arg arm_controllers)" ns="/yumi"/>
+        <node name="arm_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="$(arg arm_controllers)"/>
+
+        <!-- convert joint states to TF transforms for rviz, etc -->
+        <!-- Notice the leading '/' in '/robot_description' -->
+        <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+            <remap from="/joint_states" to="/$(arg ns_1)/joint_states" />
+        </node> -->
+    </group>
+
+    
 
 	<!--  Hardware interfaces for the joints and grippers -->    
     <arg name="arms_hardware_interface" default="PositionJointInterface"/>
@@ -39,7 +50,7 @@
         <rosparam param="source_list">["/yumi/joint_states", "/yumi/gripper_states"]</rosparam>
     </node>
 
-    <node name="yumi_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!-- <node name="yumi_robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> -->
 
     <!-- Show robot in Rviz   -->
     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find yumi_description)/yumi.rviz"/> -->

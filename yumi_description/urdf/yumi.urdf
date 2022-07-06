@@ -35,7 +35,7 @@
     <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
   <gazebo>
-    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_controller">
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
       <robotNamespace>/yumi</robotNamespace>
     </plugin>
   </gazebo>

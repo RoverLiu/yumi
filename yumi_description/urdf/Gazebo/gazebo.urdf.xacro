@@ -2,7 +2,7 @@
 <robot name="yumi" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <gazebo>
-    <plugin name="gazebo_ros_controller" filename="libgazebo_ros_control.so">
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/yumi</robotNamespace>
     </plugin>
   </gazebo>
